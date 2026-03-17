@@ -1,0 +1,57 @@
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    margin: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.vehicle-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.vehicle-card:hover {
+    transform: scale(1.05);
+}
+
+.vehicle-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.vehicle-info {
+    padding: 15px;
+}
+
+button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}

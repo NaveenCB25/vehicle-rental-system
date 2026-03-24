@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<h2>Add Vehicle</h2>
+<input type="text" id="name" placeholder="Vehicle Name">
+<input type="text" id="type" placeholder="Type (Bike/Car)">
+<input type="number" id="price" placeholder="Price">
+<button onclick="addVehicle()">Add Vehicle</button>
+
+<hr>
+
+<h2>All Vehicles</h2>
+<div id="vehicleList"></div>
+
+<hr>
+
+<h2>All Bookings / Payments</h2>
+<div id="bookingList"></div>
+<input type="file" id="image">
+
+<script>
+function addVehicle() {
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("type", document.getElementById("type").value);
+  formData.append("price", document.getElementById("price").value);
+  formData.append("image", document.getElementById("image").files[0]);
+
+  fetch("http://localhost:5000/api/vehicles/add", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => alert("Added"));
+}
+</script>
+
+<script src="js/admin.js"></script>
+
+</body>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Optional Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>
